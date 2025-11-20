@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { ListGroup, Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 class SingleComment extends Component {
   deleteComment = function () {
@@ -29,11 +29,12 @@ class SingleComment extends Component {
 
   render() {
     return (
-      <>
-        <ListGroup.Item>
+      <div className="d-flex align-items-center border border-1 border-terziary justify-content-between p-2 rounded-2 mb-1">
+        <div className="me-2">
           {this.props.comment} | {this.props.rate}pt
-        </ListGroup.Item>
+        </div>
         <Button
+          className="p-1"
           variant="danger"
           onClick={() => {
             this.deleteComment()
@@ -41,7 +42,7 @@ class SingleComment extends Component {
         >
           ELIMINA
         </Button>
-      </>
+      </div>
     )
   }
 }

@@ -17,7 +17,7 @@ class SingleBook extends Component {
                 this.setState({ selected: !this.state.selected })
               }}
               className={
-                'shadow border-danger overflow-hidden h-100' +
+                'shadow border-warning overflow-hidden h-100' +
                 (this.state.selected === true ? ' border-2' : ' border-0')
               }
             >

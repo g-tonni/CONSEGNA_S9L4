@@ -1,12 +1,12 @@
 import { Component } from 'react'
-import { Col, ListGroup } from 'react-bootstrap'
+import { Col } from 'react-bootstrap'
 import SingleComment from './SingleComment'
 
 class CommentList extends Component {
   render() {
     return (
       <Col xs={12}>
-        <ListGroup>
+        <div>
           {this.props.commentArr.map((comment) => {
             return (
               <SingleComment
@@ -17,7 +17,7 @@ class CommentList extends Component {
               />
             )
           })}
-        </ListGroup>
+        </div>
       </Col>
     )
   }

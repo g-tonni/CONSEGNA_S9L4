@@ -6,6 +6,7 @@ class BookList extends Component {
   state = {
     search: '',
   }
+
   render() {
     const filterBook = this.props.singleBook.filter((book) => {
       return book.title.toLowerCase().includes(this.state.search.toLowerCase())
@@ -43,6 +44,7 @@ class BookList extends Component {
                 imageBook={book.img}
                 titleBook={book.title}
                 priceBook={book.price}
+                bookId={book.asin}
               />
             )
           })}

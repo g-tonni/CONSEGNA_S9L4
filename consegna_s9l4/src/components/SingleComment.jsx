@@ -31,7 +31,7 @@ class SingleComment extends Component {
     return (
       <div className="d-flex align-items-center border border-1 border-terziary justify-content-between p-2 rounded-2 mb-1">
         <div className="me-2">
-          {this.props.comment} | {this.props.rate}pt
+          {this.props.comment} | {this.props.rate}/5
         </div>
         <Button
           className="p-1"

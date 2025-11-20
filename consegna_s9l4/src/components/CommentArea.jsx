@@ -1,11 +1,12 @@
 import { Component } from 'react'
-import { Row } from 'react-bootstrap'
+import { Row, Spinner } from 'react-bootstrap'
 import CommentList from './CommentList'
 import AddComment from './AddComment'
 
 class CommentArea extends Component {
   state = {
     comments: [],
+    loading: true,
   }
 
   getComments = function () {
@@ -29,10 +30,14 @@ class CommentArea extends Component {
 
         this.setState({
           comments: data,
+          loading: false,
         })
       })
       .catch((err) => {
         console.log('ERRORE: ', err)
+        this.setState({
+          loading: false,
+        })
       })
   }
 
@@ -43,6 +48,11 @@ class CommentArea extends Component {
   render() {
     return (
       <Row>
+        {this.state.loading && (
+          <div className="text-center">
+            <Spinner animation="border" variant="warning"></Spinner>
+          </div>
+        )}
         <CommentList commentArr={this.state.comments} />
         <AddComment bookId={this.props.bookId} />
       </Row>
